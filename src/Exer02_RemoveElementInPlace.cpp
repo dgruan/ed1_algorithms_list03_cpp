@@ -1,3 +1,31 @@
-//
-// Created by Junio Moreira on 27/08/26.
-//
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n, val, k = 0;
+
+    cin >> n >> val;
+
+    vector<int> nums(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> nums[i];
+    }
+
+    for (int i = 0; i < n; i++) {
+        if (nums[i] != val) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+
+    cout << k << endl;
+
+    for (int i = 0; i < k; i++) {
+        cout << nums[i] << " ";
+    }
+
+    return 0;
+}
